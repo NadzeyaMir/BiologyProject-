@@ -49,7 +49,7 @@ class Program
 
         Console.WriteLine($"Количество существ, умеющих летать: {flyingCount}");
 
-        // 7. Закрываем поток
+        // 7. Закрывает поток
         memoryStream.Close();
     }
 }
