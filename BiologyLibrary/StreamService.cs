@@ -19,7 +19,7 @@ namespace BiologyLibrary
                 progress?.Report($"Поток {threadId}: Начало записи в поток");
 
                 var writer = new StreamWriter(stream);
-                await writer.WriteLineAsync("Id,Name,CanFly"); // заголовок
+                await writer.WriteLineAsync("Id,Name,CanFly"); // Заголовок
 
                 int count = 0;
                 int total = 0;
@@ -32,7 +32,7 @@ namespace BiologyLibrary
                 {
                     await writer.WriteLineAsync(item.ToString());
                     count++;
-                    await Task.Delay(30); // Задержка для имитации долгой записи (~3 сек на 100 элементов)
+                    await Task.Delay(30); // Задержка для имитации долгой записи (~3 секунд на 100 элементов)
 
                     int percent = (int)((double)count / total * 100);
                     progress?.Report($"Поток {threadId}: Прогресс записи: {percent}%");
@@ -94,7 +94,7 @@ namespace BiologyLibrary
                 string line;
                 while ((line = await reader.ReadLineAsync()) != null)
                 {
-                    // парсинг
+                    // Парсинг
                     var parts = line.Split(',');
                     if (parts.Length >= 3)
                     {
